@@ -4,7 +4,7 @@ import {DefaultField} from './default-field'
 import type {FieldComponentProps, FieldState, FormDataProps, FormField} from './types'
 
 interface FormRendererProps extends HTMLProps<HTMLFormElement> {
-  formData: FormDataProps
+  formData?: FormDataProps
   // Function to get field state for a given field name
   getFieldState?: (fieldName: string) => FieldState
   // Function to get field error for a given field name
@@ -36,10 +36,15 @@ export const FormRenderer: FC<FormRendererProps> = (props) => {
 
     return <DefaultField field={field} fieldState={fieldState} error={error} />
   }
+  const elProps = Object.assign({}, props)
+  delete elProps.formData
+  delete elProps.getFieldState
+  delete elProps.getFieldError
+  delete elProps.fieldComponents
 
   return (
-    <form {...props} id={props.id ?? formData?.id?.current}>
-      {formData.fields?.map((field) => (
+    <form {...elProps} id={elProps.id ?? formData?.id?.current}>
+      {formData?.fields?.map((field) => (
         <div key={field._key} className="form-field">
           {renderField(field)}
         </div>
@@ -47,7 +52,7 @@ export const FormRenderer: FC<FormRendererProps> = (props) => {
 
       {children}
 
-      <button type="submit">{formData.submitButton?.text || 'Submit'}</button>
+      <button type="submit">{formData?.submitButton?.text || 'Submit'}</button>
     </form>
   )
 }
