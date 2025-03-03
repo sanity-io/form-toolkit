@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/sanity-io/form-toolkit/compare/v1.2.0...v1.2.1) (2025-03-03)
+
+### Bug Fixes
+
+- formdata react error ([#8](https://github.com/sanity-io/form-toolkit/issues/8)) ([467442a](https://github.com/sanity-io/form-toolkit/commit/467442a21c34c10ae2e14343a34e08dde833addb))
+
 ## [1.2.0](https://github.com/sanity-io/form-toolkit/compare/v1.1.0...v1.2.0) (2025-02-03)
 
 ### Features
