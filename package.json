@@ -19,11 +19,6 @@
   "sideEffects": false,
   "type": "commonjs",
   "exports": {
-    ".": {
-      "source": "./src/index.ts",
-      "import": "./dist/index.mjs",
-      "default": "./dist/index.js"
-    },
     "./formium": {
       "source": "./src/formium/index.ts",
       "import": "./dist/formium/index.mjs",
@@ -39,6 +34,11 @@
       "import": "./dist/mailchimp/index.mjs",
       "default": "./dist/mailchimp/index.js"
     },
+    "./form-schema": {
+      "source": "./src/form-schema/index.ts",
+      "import": "./dist/form-schema/index.mjs",
+      "default": "./dist/form-schema/index.js"
+    },
     "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
@@ -53,6 +53,9 @@
       ],
       "mailchimp": [
         "./dist/mailchimp/index.d.ts"
+      ],
+      "form-schema": [
+        "./dist/form-schema/index.d.ts"
       ]
     }
   },
