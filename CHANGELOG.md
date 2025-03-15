@@ -5,6 +5,22 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/sanity-io/form-toolkit/compare/v1.2.1...v2.0.0) (2025-03-15)
+
+### ⚠ BREAKING CHANGES
+
+- Import provider-specific plugin and helpers from provider export.
+
+- chore: merge in main
+
+- fix: match original exports
+
+- fix: remove root types
+
+### Features
+
+- use provider-specific exports ([#7](https://github.com/sanity-io/form-toolkit/issues/7)) ([511d22a](https://github.com/sanity-io/form-toolkit/commit/511d22a9a639708d895124e950e80ec27d5d11f3))
+
 ## [1.2.1](https://github.com/sanity-io/form-toolkit/compare/v1.2.0...v1.2.1) (2025-03-03)
 
 ### Bug Fixes
