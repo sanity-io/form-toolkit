@@ -1,6 +1,6 @@
 {
   "name": "@sanity/form-toolkit",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Tool kit for integrating forms with a Sanity Studio",
   "keywords": [
     "sanity",
@@ -110,7 +110,7 @@
     "typescript": "^5.7.2"
   },
   "peerDependencies": {
-    "react": "^18",
+    "react": "^18 || ^19",
     "sanity": "^3"
   },
   "engines": {
