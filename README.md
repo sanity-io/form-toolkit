@@ -24,7 +24,7 @@ There's an "out of the box" handler for Next.js API routes:
 
 ```ts
 // pages/api/hubspot.ts
-import {hubSpotHandler} from '@sanity/form-toolkit'
+import {hubSpotHandler} from '@sanity/form-toolkit/hubspot'
 
 const handler = hubSpotHandler({
   token: process.env.HUBSPOT_TOKEN ?? '',
@@ -37,7 +37,7 @@ Or add `fetchHubSpotData` to an API route in your non-Next framework
 
 ```ts
 // my-nuxt-app/server/api/hubspot.ts
-import {fetchHubSpotData} from '@sanity/form-toolkit'
+import {fetchHubSpotData} from '@sanity/form-toolkit/hubspot'
 
 export default defineEventHandler(async (event) => {
   const req = event.node.req
@@ -54,7 +54,7 @@ Add it as a plugin in `sanity.config.ts` (or .js):
 
 ```ts
 import {defineConfig} from 'sanity'
-import {hubSpotInput} from '@sanity/form-toolkit'
+import {hubSpotInput} from '@sanity/form-toolkit/hubspot'
 
 export default defineConfig({
   //...
@@ -96,7 +96,7 @@ There's an "out of the box" handler for Next.js API routes:
 
 ```ts
 // pages/api/mailchimp.ts
-import {mailchimpHandler} from '@sanity/form-toolkit'
+import {mailchimpHandler} from '@sanity/form-toolkit/mailchimp'
 
 const handler = mailchimpHandler({
   key: process.env.MAILCHIMP_KEY ?? '',
@@ -110,7 +110,7 @@ Or add `fetchMailchimpData` to an API route in your non-Next framework
 
 ```ts
 // my-nuxt-app/server/api/mailchimp.ts
-import {fetchMailchimpData} from '@sanity/form-toolkit'
+import {fetchMailchimpData} from '@sanity/form-toolkit/mailchimp'
 
 export default defineEventHandler(async (event) => {
   const req = event.node.req
@@ -128,7 +128,7 @@ Add it as a plugin in `sanity.config.ts` (or .js):
 
 ```ts
 import {defineConfig} from 'sanity'
-import {mailchimpInput} from '@sanity/form-toolkit'
+import {mailchimpInput} from '@sanity/form-toolkit/mailchimp'
 
 export default defineConfig({
   //...
@@ -166,7 +166,7 @@ First add `formSchema` it as a plugin in `sanity.config.ts` (or .js):
 
 ```ts
 import {defineConfig} from 'sanity'
-import {formSchema} from '@sanity/form-toolkit'
+import {formSchema} from '@sanity/form-toolkit/form-schema'
 
 export default defineConfig({
   //...
@@ -178,7 +178,7 @@ Then pass a `form` document to the `FormRenderer` component
 
 ```tsx
 import React, {type FC} from 'react'
-import {FormRenderer, type FormDataProps} from '@sanity/form-toolkit'
+import {FormRenderer, type FormDataProps} from '@sanity/form-toolkit/form-schema'
 
 interface NativeFormExampleProps {
   formData: FormDataProps

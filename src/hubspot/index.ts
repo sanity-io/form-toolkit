@@ -2,7 +2,8 @@ import {asyncList} from '@sanity/sanity-plugin-async-list'
 import {definePlugin} from 'sanity'
 
 import {Option} from './components/option'
-
+import {hubSpotHandler} from './create-handler'
+import {fetchHubSpotData} from './fetch-hubspot-data'
 interface HubSpotInputConfig {
   url: string | URL
 }
@@ -12,7 +13,7 @@ interface HubSpotInputConfig {
  *
  * ```ts
  * import {defineConfig} from 'sanity'
- * import {hubSpotInput} from '@sanity/sanity-plugin-form-toolkit'
+ * import {hubSpotInput} from '@sanity/form-toolkit/hubspot'
  *
  * export default defineConfig({
  *   // ...
@@ -24,8 +25,9 @@ interface HubSpotInputConfig {
  * })
  * ```
  */
-type ExtendedOption = {value: string; name: string}
 
+type ExtendedOption = {value: string; name: string}
+export {fetchHubSpotData, hubSpotHandler}
 export const hubSpotInput = definePlugin<HubSpotInputConfig>((options) => {
   return {
     name: 'sanity-plugin-form-toolkit_hubspot-input',
