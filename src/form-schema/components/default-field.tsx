@@ -27,6 +27,8 @@ export const DefaultField: FC<FieldComponentProps> = ({field, fieldState, error}
 
   const renderInput = () => {
     switch (type) {
+      case 'submit':
+        return <button type="submit">{label || 'Submit'}</button>
       case 'textarea':
         return (
           <textarea
@@ -105,7 +107,7 @@ export const DefaultField: FC<FieldComponentProps> = ({field, fieldState, error}
 
   return (
     <>
-      {label && type != 'hidden' && <label htmlFor={name}>{label}</label>}
+      {label && !['hidden', 'submit'].includes(type) && <label htmlFor={name}>{label}</label>}
       {renderInput()}
       {error && <span className="error">{error}</span>}
     </>
