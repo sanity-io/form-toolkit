@@ -52,7 +52,11 @@ export const FormRenderer: FC<FormRendererProps> = (props) => {
 
       {children}
 
-      <button type="submit">{formData?.submitButton?.text || 'Submit'}</button>
+      {renderField({
+        type: 'submit',
+        name: 'submit',
+        label: formData?.submitButton?.text || 'Submit',
+      })}
     </form>
   )
 }

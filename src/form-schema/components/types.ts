@@ -19,11 +19,11 @@ export type FormField = {
   type: string
   label?: string
   name: string
-  required: boolean
+  required?: boolean
   validation?: ValidationRule[]
   options?: FieldOptions
   choices?: FieldChoice[]
-  _key: string
+  _key?: string
 }
 
 export type FormDataProps = {
