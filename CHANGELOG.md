@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.0](https://github.com/sanity-io/form-toolkit/compare/v2.0.0...v2.1.0) (2025-03-18)
+
+### Features
+
+- adds submit button as component option ([#9](https://github.com/sanity-io/form-toolkit/issues/9)) ([409bf46](https://github.com/sanity-io/form-toolkit/commit/409bf46b8fb9b285f4719d9e4106fc9689a7f4b6))
+
 ## [2.0.0](https://github.com/sanity-io/form-toolkit/compare/v1.2.1...v2.0.0) (2025-03-15)
 
 ### ⚠ BREAKING CHANGES
