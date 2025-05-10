@@ -1,4 +1,4 @@
-import {definePlugin} from 'sanity'
+import {definePlugin, type FieldDefinition} from 'sanity'
 
 // import {structureTool} from 'sanity/structure'
 import {FormRenderer} from './components/form-renderer'
@@ -18,12 +18,19 @@ import {schema} from './schema-types'
  * })
  * ```
  */
+export type FieldsOption = Array<FieldDefinition>
+interface FormSchemaPluginOptions {
+  /**
+   * Array of field definitions to be used in the form schema.
+   */
+  fields?: FieldsOption
+}
 export type {FormDataProps} from './components/types'
 export {FormRenderer}
-export const formSchema = definePlugin(() => {
+export const formSchema = definePlugin(({fields = []}: FormSchemaPluginOptions) => {
   return {
     name: 'form-toolkit_form-schema',
-    schema,
+    schema: schema(fields),
     // plugins: [structureTool({defaultDocumentNode})],
   }
 })
