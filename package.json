@@ -39,6 +39,11 @@
       "import": "./dist/form-schema/index.mjs",
       "default": "./dist/form-schema/index.js"
     },
+    "./form-renderer": {
+      "source": "./src/form-renderer/index.ts",
+      "import": "./dist/form-renderer/index.mjs",
+      "default": "./dist/form-renderer/index.js"
+    },
     "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
@@ -55,6 +60,9 @@
       ],
       "form-schema": [
         "./dist/form-schema/index.d.ts"
+      ],
+      "form-renderer": [
+        "./dist/form-renderer/index.d.ts"
       ]
     }
   },

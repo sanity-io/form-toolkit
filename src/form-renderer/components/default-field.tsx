@@ -3,9 +3,12 @@ import type {ChangeEvent, FC, LegacyRef} from 'react'
 import type {FieldComponentProps} from './types'
 
 export const DefaultField: FC<FieldComponentProps> = ({field, fieldState, error}) => {
-  const {type, label, name, options = {}, choices = []} = field
+  const {type, label, name, options = {}, choices = [], validation = []} = field
   if (!type || !name) return null
-
+  const validationRules = validation.reduce((acc: Record<string, string>, v) => {
+    acc[v.type] = v.value
+    return acc
+  }, {})
   const {value, onChange, onBlur, ref} = fieldState
 
   const handleChange = (
@@ -34,10 +37,11 @@ export const DefaultField: FC<FieldComponentProps> = ({field, fieldState, error}
           <textarea
             ref={ref as LegacyRef<HTMLTextAreaElement>}
             name={name}
-            value={value ?? ''}
             onChange={handleChange}
             onBlur={onBlur}
             placeholder={options.placeholder}
+            {...validationRules}
+            value={value ?? ''}
           />
         )
 
@@ -48,6 +52,7 @@ export const DefaultField: FC<FieldComponentProps> = ({field, fieldState, error}
             name={name}
             value={value ?? ''}
             onChange={handleChange}
+            {...validationRules}
             onBlur={onBlur}
           >
             {choices?.map((choice, i) => (
@@ -69,6 +74,7 @@ export const DefaultField: FC<FieldComponentProps> = ({field, fieldState, error}
               checked={value === choice.value}
               onChange={handleChange}
               onBlur={onBlur}
+              {...validationRules}
             />
             {choice.label}
           </label>
@@ -85,6 +91,7 @@ export const DefaultField: FC<FieldComponentProps> = ({field, fieldState, error}
               checked={Array.isArray(value) ? value.includes(choice.value) : value === choice.value}
               onChange={(e) => handleCheckboxChange(e, choice.value)}
               onBlur={onBlur}
+              {...validationRules}
             />
             {choice.label}
           </label>
@@ -98,6 +105,7 @@ export const DefaultField: FC<FieldComponentProps> = ({field, fieldState, error}
             name={name}
             value={value ?? options.defaultValue ?? ''}
             onChange={handleChange}
+            {...validationRules}
             onBlur={onBlur}
             placeholder={options.placeholder}
           />

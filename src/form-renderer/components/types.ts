@@ -1,4 +1,3 @@
-// types.ts
 export type ValidationRule = {
   type: string
   value: string
@@ -32,7 +31,6 @@ export type FormDataProps = {
     current: string
   }
   fields?: FormField[]
-
   submitButton?: {
     text: string
     position: 'left' | 'center' | 'right'

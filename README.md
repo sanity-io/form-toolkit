@@ -170,15 +170,45 @@ import {formSchema} from '@sanity/form-toolkit/form-schema'
 
 export default defineConfig({
   //...
-  plugins: [formSchema()],
+  plugins: [
+    formSchema({
+      // Optionally, use your own schemas for additional formFields
+      fields: [
+        defineField({
+          name: 'myField',
+          type: 'myObjectType',
+        }),
+      ],
+    }),
+  ],
 })
 ```
 
-Then pass a `form` document to the `FormRenderer` component
+This will create a "form" document type.
+Then, add a field to your schema with type `form`
+
+```ts
+// ./src/schemaTypes/page.ts
+import {defineField, defineType} from 'sanity'
+
+export default defineType({
+  name: 'page',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'form',
+      type: 'reference',
+      to: [{type: 'form'}],
+    }),
+  ],
+})
+```
+
+Finally, pass a `form` document to the `FormRenderer` component
 
 ```tsx
 import React, {type FC} from 'react'
-import {FormRenderer, type FormDataProps} from '@sanity/form-toolkit/form-schema'
+import {FormRenderer, type FormDataProps} from '@sanity/form-toolkit/form-renderer'
 
 interface NativeFormExampleProps {
   formData: FormDataProps
