@@ -208,7 +208,7 @@ Finally, pass a `form` document to the `FormRenderer` component
 
 ```tsx
 import React, {type FC} from 'react'
-import {FormRenderer, type FormDataProps} from '@sanity/form-toolkit/form-schema'
+import {FormRenderer, type FormDataProps} from '@sanity/form-toolkit/form-renderer'
 
 interface NativeFormExampleProps {
   formData: FormDataProps
