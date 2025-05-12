@@ -26,10 +26,10 @@ interface FormSchemaPluginOptions {
   fields?: FieldsOption
 }
 
-export const formSchema = definePlugin(({fields = []}: FormSchemaPluginOptions) => {
+export const formSchema = definePlugin((options: FormSchemaPluginOptions | undefined) => {
   return {
     name: 'form-toolkit_form-schema',
-    schema: schema(fields),
+    schema: schema(options?.fields ?? []),
     // plugins: [structureTool({defaultDocumentNode})],
   }
 })
