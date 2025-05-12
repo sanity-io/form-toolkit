@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0](https://github.com/sanity-io/form-toolkit/compare/v2.1.0...v2.2.0) (2025-05-11)
+
+### Features
+
+- custom form fields ([#10](https://github.com/sanity-io/form-toolkit/issues/10)) ([cde7efc](https://github.com/sanity-io/form-toolkit/commit/cde7efce92dd21683e1b3f5db2ac2b9a77020261))
+
 ## [2.1.0](https://github.com/sanity-io/form-toolkit/compare/v2.0.0...v2.1.0) (2025-03-18)
 
 ### Features
