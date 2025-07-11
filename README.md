@@ -4,8 +4,6 @@
 
 Plugin for integrating 3rd party form services or building your own forms with Sanity.
 
-> This is a **Sanity Studio v3** plugin.
-
 ## Installation
 
 ```sh
