@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.3](https://github.com/sanity-io/form-toolkit/compare/v2.2.2...v2.2.3) (2025-12-29)
+
+### Bug Fixes
+
+- **deps:** allow studio v5 in peer deps ranges ([c532238](https://github.com/sanity-io/form-toolkit/commit/c532238b2fa319074ea5ee76ca6de343068ac002))
+
 ## [2.2.2](https://github.com/sanity-io/form-toolkit/compare/v2.2.1...v2.2.2) (2025-07-10)
 
 ### Bug Fixes
